@@ -1,0 +1,117 @@
+.header {
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    border-bottom: 4px solid rgb(144, 144, 144);
+    background-color: rgb(227, 227, 227);
+    position: relative;
+}
+
+.navBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(176, 15, 176);
+}
+
+.menu {
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(176, 15, 176);
+    cursor: pointer;
+    display: none;
+}
+
+.navLinks {
+    margin-left: 100px;
+}
+
+.navLink {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 20px;
+    transition: 0.5s ease-in-out;
+}
+
+.navLinkActive {
+    color: rgb(176, 15, 176);
+    font-weight: bold;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn {
+    cursor: pointer;
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 21px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    transition: 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: darkblue;
+}
+
+.navLink:hover {
+    color: darkblue;
+    font-weight: bold;
+}
+
+@media(max-width: 970px) {
+    .menu {
+        display: block;
+        position: absolute;
+        right: 10px;
+    }
+
+    .navLinksWrapper {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        background-color: inherit;
+        transition: all 0.5s ease-in;
+        z-index: 100;
+        background-color: rgb(227, 227, 227);
+        clip-path: polygon(0 0, 100% 1%, 100% 0, 0 0);
+    }
+
+    .navLinks {
+        padding-left: 30px;
+        padding-bottom: 10px;
+        margin-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        border-bottom: 4px solid rgb(144, 144, 144); 
+    }
+
+    .navLink {
+        padding: 0;
+        margin: 12px 0;
+    }
+
+    .right {
+        margin-right: 15px;
+    }
+}
+

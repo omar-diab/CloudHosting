@@ -1,0 +1,213 @@
+====== More About Rounting ======
+
+. Route Group  =>  Ex : (folderName) 
+
+. Private Folder  =>  Ex : _folderName 
+
+. Catch All Route Segment  =>  Ex : [...folderName] 
+
+. Optional Catch All Route Segment  =>  Ex : [[...folderName]] 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+====== Rendering ======
+
+-- Rendering includes :
+    - Client Side Rendering (CSR)
+    - Pre Rendering (At Server)
+
+--------------------
+
+-- Client Side Rendering :
+    - Create the html pages on the client side
+    --- EX : React
+
+-- Pre Rendering (At Server) :
+    - Create the html pages on the server side
+    --- EX : Nextjs
+
+--------------------
+
+-- Pre Rendering includes :
+    - Static side generation (SSG)
+    - Server side rendering (SSR)
+
+--------------------
+
+-- CSR :
+    - All your react application will be inside the bandle.js file
+    - Html file will be without any content, only some html tags
+
+--------------------
+
+-- Pre Rendering :
+    - SSG : 
+        - It will be rendered at build time
+        - npm run build
+    - SSR :
+        - It will be rendered at request time
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+====== HTTP Protocal ======
+
+-- CRUD Operations :
+    - C => Create
+    - R => Read
+    - U => Update
+    - D => Delete
+
+--------------------
+
+-- HTTP Methods :
+    - GET
+    - POST
+    - PUT
+    - DELETE
+
+--------------------
+
+-- HTTP Request & HTTP Response :
+    - includes { header {...metaData}, body {...data} } 
+
+--------------------
+
+-- HTTP Status Code :
+    - 404 => Not Found
+    - 400 => Bad Request
+    - 200 => Successfull
+    - 201 => Created Successfully
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+====== Postgresql ======
+
+-- sudo -i -u postgres psql :
+    - To open the postgres terminal
+
+--------------------
+
+-- sudo systemctl status postgresql :
+    - To check the status of the postgres
+
+--------------------
+
+-- CREATE USER UserName WITH PASSWORD 'password'; :
+    - To create the user
+
+-- CREATE DATABASE DB_Name; :
+    - To create the database
+
+-- GRANT ALL PRIVILEGES ON DATABASE DB_Name TO UserName; :
+    - To assign the database to the user
+
+--------------------
+
+-- \q :
+    - Exit the PostgreSQL Prompt
+-- exit :
+    - Exit the PostgreSQL User Session
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+====== Prisma ======
+
+-- ORM Setup : ( Object-relational mapping )
+    - [1] npm i -D prisma :
+        - install the CLI prisma on dependencies  (CLI = Command line interface)
+    - [2] npx prisma :
+        - To let me use prisma with the CLI
+    - [3] npx prisma init :
+        - To install the prisma client on the project
+    - [4] CREATE SCHEMA SchemaName AUTHORIZATION UserName; :
+        - To create the schema
+    - [5] GRANT ALL PRIVILEGES ON SCHEMA SchemaName TO UserName; :
+        - To assign the schema to the user
+
+--------------------
+
+-- npx prisma format :
+    - To format the schema of prisma and make it more readable
+
+--------------------
+
+-- npx prisma migrate dev :
+    - It will change all the models to database tables
+    - And will create table on the database according to the name we provided on .env
+    - And will save all the tables in the database
+
+--------------------
+
+-- npx prisma studio :
+    - To open the prisma studio in the browser 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+====== bcryptjs ======
+
+-- bcryptjs :
+    - Library for data encryption
+
+--------------------
+
+-- npm i bcryptjs :
+    - To install the bcryptjs on the project
+
+--------------------
+
+-- npm i -D @types/bcryptjs :
+    - To acces the typeScript in the bcryptjs   -- If our project with js we don't need to this command
+    
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+====== Json Web Token (JWT) ======
+
+-- JWT (Json Web Token) :
+    - JWT is an authentication token standard used to securely transmit information between parties in a compact format.
+
+--------------------
+
+-- npm i jsonwebtoken :
+    - To install the jsonwebtoken on the project
+-- npm i -D @types/jsonwebtoken :
+    - To acces the typeScript in the jsonwebtoken   -- If our project with js we don't need to this command 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+====== Middleware ======
+
+-- Middleware :
+    - It is like a route handler
+    - It comes between the client and the server
+    - It can check on the http request if it successful its acsses to the request to go the server if not it gives the client http response
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+====== Cookie ======
+
+-- Cookie :
+    - Its like a localStorage but it is on the server side 
+
+--------------------
+
+-- npm i cookie : 
+    - To install the cookie on the project
+-- npm i -D @types/cookie : 
+    - To acces the typeScript in the cookie   -- If our project with js we don't need to this command 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+====== Axios ======
+
+-- Axios :
+    - It is a library that help us to work with api
+
+--------------------
+
+-- npm i axios
+    - To install the axios on the project
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
