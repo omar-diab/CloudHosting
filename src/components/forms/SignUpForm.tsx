@@ -30,6 +30,7 @@ const SignUpForm = () => {
       });
       router.push('/')
       setLoading(false)
+      toast.success('Successfully registered')
       router.refresh();
     } catch (error : any) {
       toast.error(error?.response?.data.message);

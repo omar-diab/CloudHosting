@@ -12,6 +12,7 @@ const LogoutButton = () => {
         try {
             await axios.get(`${domain}/api/users/logout`);
             router.push('/');
+            toast.success('Successfully logged out')
             router.refresh();
         } catch (error) {
             toast.warning('Something went wrong');

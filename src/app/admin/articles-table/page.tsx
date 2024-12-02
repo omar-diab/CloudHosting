@@ -27,6 +27,29 @@ const AdminArticlesTable = async ({
 
   const pages = Math.ceil(count / ARTICLE_PER_PAGE);
 
+  if (!pages) {
+    return (
+      <>
+        <section className="m-auto fix-height flex items-center justify-center flex-col">
+          <div className="text-center space-y-4 mb-7">
+            <h1 className="text-5xl max-md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-700 animate-pulse">
+              No Articles Found
+            </h1>
+            <p className="text-lg text-gray-500">
+              Check back later for updates!
+            </p>
+          </div>
+          <Link
+            href="/"
+            className="px-6 py-3 bg-green-700 text-white rounded-lg hover:bg-green-800 transition-transform transform hover:scale-105"
+          >
+            Go Home
+          </Link>
+        </section>
+      </>
+    );
+  }
+
   return (
     <section className="p-5">
       <h1 className="mb-7 mt-5 text-5xl max-md:text-4xl font-bold text-blue-500">

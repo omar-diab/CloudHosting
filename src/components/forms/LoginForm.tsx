@@ -29,6 +29,7 @@ const LoginForms = () => {
       });
       router.push("/");
       setLoading(false);
+      toast.success('Successfully logged in')
       router.refresh();
     } catch (error: any) {
       toast.error(error?.response.data.message);

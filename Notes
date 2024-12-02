@@ -204,10 +204,28 @@
 
 --------------------
 
--- npm i axios
+-- npm i axios :
     - To install the axios on the project
 
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+====== Parallel Routes ======
+
+-- Parallel Routes :
+    - The parallel routes is not routes, its a component
+    - We call the parallel with routes because it has every route benefits
+    - It starts with @FolderName
+    - When we create a new parallel route we have to stop the server and run it again
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+====== Intercepting Routes ======
+
+-- Intercepting Routes :
+    - Make two routes for the same page with two jobs (about - (.)about)
+        - If i want to show every refresh page something else
+            - about -> Shows the red box
+            - (.about) -> shows the blue box
+    - It starts with (the path)FolderName
+    - When we create a new intercepting route we have to stop the server and run it again

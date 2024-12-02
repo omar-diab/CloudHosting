@@ -24,14 +24,14 @@ export async function GET(request: NextRequest, { params }: Props) {
             user: {
               select: {
                 username: true,
-              }
-            }
+              },
+            },
           },
           orderBy: {
             createdAt: "desc",
-          }
-        }
-      }
+          },
+        },
+      },
     });
 
     if (!article) {
@@ -61,7 +61,7 @@ export async function PUT(request: NextRequest, { params }: Props) {
   try {
     const user = verifyToken(request);
 
-    if(user === null || user.isAdmin === false) {
+    if (user === null || user.isAdmin === false) {
       return NextResponse.json(
         { message: "Access denied, you are not an admin" },
         { status: 403 }
@@ -109,7 +109,7 @@ export async function DELETE(request: NextRequest, { params }: Props) {
   try {
     const user = verifyToken(request);
 
-    if(user === null || user.isAdmin === false) {
+    if (user === null || user.isAdmin === false) {
       return NextResponse.json(
         { message: "Access denied, you are not an admin" },
         { status: 403 }
@@ -117,10 +117,10 @@ export async function DELETE(request: NextRequest, { params }: Props) {
     }
 
     const article = await prisma.article.findUnique({
-        where: { id : parseInt(params.id) },
-        include: {
-          comments: true,
-        }
+      where: { id: parseInt(params.id) },
+      include: {
+        comments: true,
+      },
     });
 
     if (!article) {
@@ -131,14 +131,16 @@ export async function DELETE(request: NextRequest, { params }: Props) {
     }
 
     // Delete the article
-    const DeletedArticle = await prisma.article.delete({ where: { id: parseInt(params.id) }});
+    const DeletedArticle = await prisma.article.delete({
+      where: { id: parseInt(params.id) },
+    });
 
     // Delete all comments that belong to this article
-    const commentsId: number[] = article?.comments.map(comment => comment.id)
+    const commentsId: number[] = article?.comments.map((comment) => comment.id);
 
     await prisma.comment.deleteMany({
-      where: { id: { in: commentsId } }
-    })
+      where: { id: { in: commentsId } },
+    });
 
     return NextResponse.json({ message: "Article Deleted" }, { status: 200 });
   } catch (error) {
